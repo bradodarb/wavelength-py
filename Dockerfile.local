@@ -1,0 +1,20 @@
+FROM alpine:latest
+
+RUN apk update && apk add --update nodejs nodejs-npm yarn jq zip unzip curl python3 python3-dev libffi libffi-dev bash gcc musl-dev openssl-dev make
+
+ENV PYTHONPATH=/code
+
+RUN addgroup -g 1000 -S app && adduser -S -u 1000 -S app -G app
+
+RUN mkdir -p /code
+
+COPY . /code/
+
+RUN pip3 install --upgrade pip -r /code/deploy-requirements.txt
+RUN pip3 install --upgrade pip -r /code/test/requirements.txt
+
+RUN cd /code && make -f Makefile.targets clean
+
+USER app
+
+WORKDIR /code

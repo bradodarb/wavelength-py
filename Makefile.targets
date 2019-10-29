@@ -1,0 +1,43 @@
+SHELL:=/bin/bash
+
+
+.PHONY: check
+check: lint test
+
+.PHONY: clean
+clean:
+	find . -name '*.pyc' -delete
+	find . -name '__pycache__' -delete
+	rm -rf .coverage
+	rm -rf htmlcov
+	rm -rf .pytest_cache
+	rm -rf .cache
+
+.PHONY: lint
+lint:
+	pylint ./src
+
+.PHONY: unit-test
+unit-test:
+	py.test -s --color=yes --cov-report html --cov-report term --cov=exos_serverless_lib test/unit --cov-fail-under=80
+
+.PHONY: integration-test
+integration-test:
+	py.test -s --color=yes --cov-report html --cov-report term --cov=exos_serverless_lib test/integration --cov-fail-under=80
+
+.PHONY: test
+test:
+	py.test -s --color=yes --cov-report html --cov-report term --cov=exos_serverless_lib test --cov-fail-under=80
+.PHONY: coverage
+coverage: test
+	google-chrome htmlcov/index.html
+
+.PHONY: build
+build:
+	python3 setup.py bdist_wheel
+
+deploy: build
+	s3pypi --bucket gladysknight.exosdev.biz
+
+deploy-overwrite: build
+	s3pypi --force --bucket gladysknight.exosdev.biz

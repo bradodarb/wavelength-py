@@ -1,0 +1,7 @@
+-r ../exos_serverless_lib/requirements.txt
+pytest==3.9.3
+pytest-cov==2.5.1
+pylint==2.3.0
+mock==2.0.0
+python-dotenv==0.9.1
+
