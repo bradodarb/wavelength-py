@@ -12,10 +12,10 @@ from structlog.processors import (TimeStamper,
                                   JSONRenderer)
 from structlog.stdlib import add_logger_name, add_log_level
 
-from exos_serverless_lib.aws.aws_args import get_stage
-from exos_serverless_lib.errors.exceptions import ExceptionLogLevel, EXOSBaseException
-from exos_serverless_lib.logging.filter import NestedFilter, whitelist
-from exos_serverless_lib.logging.logging_util import (LOG_NAME_VS_VAL,
+from wavelength_serverless_lib.aws.aws_args import get_stage
+from wavelength_serverless_lib.errors.exceptions import ExceptionLogLevel, wavelengthBaseException
+from wavelength_serverless_lib.logging.filter import NestedFilter, whitelist
+from wavelength_serverless_lib.logging.logging_util import (LOG_NAME_VS_VAL,
                                                       ENV_LOG_VAR_KEY, DEFAULT_LOGGING_NAME,
                                                       DEFAULT_LOGGING, MAX_LOG_DEBUG_OUTPUT,
                                                       DEBUG_LOGGING, MAX_LOG_OUTPUT,
@@ -133,25 +133,25 @@ class LogLambdaBase:
             LogLambdaBase._structured_logger = LogLambdaBase._structured_logger.bind(**value)
 
     @staticmethod
-    def log_exos_exception(exos_exception: EXOSBaseException, fluent_logger=None, **kwargs):
+    def log_wavelength_exception(wavelength_exception: wavelengthBaseException, fluent_logger=None, **kwargs):
         """
-        log EXOSBaseException to the configured log level.
+        log wavelengthBaseException to the configured log level.
         """
-        log_func = LogLambdaBase._get_exos_exception_log_function(exos_exception.exception_log_level)
+        log_func = LogLambdaBase._get_wavelength_exception_log_function(wavelength_exception.exception_log_level)
 
-        return log_func(exos_exception.event_type,
-                        str(exos_exception),
-                        exception_type=type(exos_exception).__name__,
+        return log_func(wavelength_exception.event_type,
+                        str(wavelength_exception),
+                        exception_type=type(wavelength_exception).__name__,
                         exc_info=True,
                         fluent_logger=fluent_logger,
                         **kwargs)
 
     @staticmethod
-    def _get_exos_exception_log_function(exception_log_level: ExceptionLogLevel):
+    def _get_wavelength_exception_log_function(exception_log_level: ExceptionLogLevel):
         """
         Return the log function appropriate for the ExceptionLogLevel
         """
-        _exos_exception_log_level_funcs = {
+        _wavelength_exception_log_level_funcs = {
             # EXCEPTION type is deliberately logged as error
             ExceptionLogLevel.EXCEPTION: LogLambdaBase.error,
             ExceptionLogLevel.WARNING: LogLambdaBase.warn,
@@ -161,7 +161,7 @@ class LogLambdaBase:
             ExceptionLogLevel.ERROR: LogLambdaBase.error
         }
 
-        return _exos_exception_log_level_funcs.get(exception_log_level, LogLambdaBase.error)
+        return _wavelength_exception_log_level_funcs.get(exception_log_level, LogLambdaBase.error)
 
     @staticmethod
     def exception(error, fluent_logger=None, **kwargs):

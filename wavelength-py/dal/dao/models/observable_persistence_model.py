@@ -3,7 +3,7 @@ Observable Data Model
 """
 from typing import List, Any, Dict
 
-from exos_serverless_lib.model.model_base import BaseModel
+from wavelength_serverless_lib.model.model_base import BaseModel
 
 
 class ObservablePersistenceModel(BaseModel):

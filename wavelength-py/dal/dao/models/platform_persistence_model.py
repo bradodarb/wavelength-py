@@ -7,9 +7,9 @@ from typing import List, Any, Dict, Optional, Type
 from pynamodb.models import Model as PynamoModel
 from schematics.types import StringType, IntType
 
-from exos_serverless_lib.dal.dal_config import DalConfig
-from exos_serverless_lib.dal.dao.models.observable_persistence_model import ObservablePersistenceModel
-from exos_serverless_lib.model.model_base import BaseModel
+from wavelength_serverless_lib.dal.dal_config import DalConfig
+from wavelength_serverless_lib.dal.dao.models.observable_persistence_model import ObservablePersistenceModel
+from wavelength_serverless_lib.model.model_base import BaseModel
 
 
 class BasePersistenceModel(ObservablePersistenceModel):

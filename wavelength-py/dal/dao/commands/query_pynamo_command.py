@@ -6,14 +6,14 @@ from typing import List, Callable, Optional, Iterator
 from cachetools import cached, TTLCache
 from pynamodb.models import Model as PynamoModel
 
-from exos_serverless_lib.config import CONFIG
-from exos_serverless_lib.dal.dal_config import DalConfig
-from exos_serverless_lib.dal.dao.commands.post_filter_pynamo_command import PostFilteredPynamoCommand, filter_deleted_items
-from exos_serverless_lib.dal.dao.commands.pynamo_command import FilterModel
-from exos_serverless_lib.dal.dao.commands.pynamo_query_args import PynamoQueryArguments
-from exos_serverless_lib.dal.dao.models.platform_persistence_model import PynamoPersistenceModel
-from exos_serverless_lib.dal.dynamodb.util import decode_start_token
-from exos_serverless_lib.dal.pynamo_models.util import pynamo_read_handler
+from wavelength_serverless_lib.config import CONFIG
+from wavelength_serverless_lib.dal.dal_config import DalConfig
+from wavelength_serverless_lib.dal.dao.commands.post_filter_pynamo_command import PostFilteredPynamoCommand, filter_deleted_items
+from wavelength_serverless_lib.dal.dao.commands.pynamo_command import FilterModel
+from wavelength_serverless_lib.dal.dao.commands.pynamo_query_args import PynamoQueryArguments
+from wavelength_serverless_lib.dal.dao.models.platform_persistence_model import PynamoPersistenceModel
+from wavelength_serverless_lib.dal.dynamodb.util import decode_start_token
+from wavelength_serverless_lib.dal.pynamo_models.util import pynamo_read_handler
 
 
 class PynamoQueryResult:

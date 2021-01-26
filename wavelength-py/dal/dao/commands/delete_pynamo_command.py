@@ -3,7 +3,7 @@ Module for supporting a hard delete on a pynamo item
 """
 from typing import Any
 
-from exos_serverless_lib.dal.dao.commands.post_filter_pynamo_command import PostFilteredPynamoCommand
+from wavelength_serverless_lib.dal.dao.commands.post_filter_pynamo_command import PostFilteredPynamoCommand
 
 
 class PynamoDeleteCommand(PostFilteredPynamoCommand):

@@ -7,8 +7,8 @@ protects against adding objects to the metrics dictionary that are not json seri
 """
 
 import datetime
-from exos_serverless_lib.logging.log_lambda_base import LogLambdaBase
-from exos_serverless_lib.logging.util.cast_checks import is_int_like, is_json_serializable
+from wavelength_serverless_lib.logging.log_lambda_base import LogLambdaBase
+from wavelength_serverless_lib.logging.util.cast_checks import is_int_like, is_json_serializable
 
 
 class LogLambdaMetrics:

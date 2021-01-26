@@ -6,11 +6,11 @@ from typing import Callable, Optional, List, Union
 from pynamodb.exceptions import DoesNotExist
 from pynamodb.models import Model as PynamoModel
 
-from exos_serverless_lib.dal.dal_config import DalConfig
-from exos_serverless_lib.dal.dao.commands.pynamo_command import BasePynamoCommand, always_pass
-from exos_serverless_lib.dal.dao.models.platform_persistence_model import PynamoPersistenceModel
-from exos_serverless_lib.dal.pynamo_models.util import pynamo_read_handler
-from exos_serverless_lib.errors.exceptions import Base404Exception
+from wavelength_serverless_lib.dal.dal_config import DalConfig
+from wavelength_serverless_lib.dal.dao.commands.pynamo_command import BasePynamoCommand, always_pass
+from wavelength_serverless_lib.dal.dao.models.platform_persistence_model import PynamoPersistenceModel
+from wavelength_serverless_lib.dal.pynamo_models.util import pynamo_read_handler
+from wavelength_serverless_lib.errors.exceptions import Base404Exception
 
 
 class PostFilteredPynamoCommand(BasePynamoCommand):

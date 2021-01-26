@@ -11,7 +11,7 @@ from typing import Optional
 import simplejson as json
 from pynamodb.attributes import JSONAttribute
 
-from exos_serverless_lib.logging.slog import StructLog as log
+from wavelength_serverless_lib.logging.slog import StructLog as log
 
 COMPRESSED_KEY = '__COMP__'
 

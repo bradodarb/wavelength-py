@@ -3,7 +3,7 @@ import unittest
 
 from botocore.exceptions import ClientError
 
-from exos_serverless_lib.aws.boto_helper import is_a_boto3_throttle_error
+from wavelength_serverless_lib.aws.boto_helper import is_a_boto3_throttle_error
 
 logging.basicConfig()
 log = logging.getLogger('logger')

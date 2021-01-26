@@ -13,10 +13,10 @@ with open(path.join(HERE, 'README.rst')) as f:
 with open(path.join(HERE, 'version.txt')) as f:
     VERSION = f.read()
 
-with open(path.join(HERE, 'exos_serverless_lib/requirements.txt')) as f:
+with open(path.join(HERE, 'wavelength_serverless_lib/requirements.txt')) as f:
     requires = f.read().splitlines()
 
-setup(name='exos-serverless-lib',
+setup(name='wavelength-serverless-lib',
       version=VERSION,
       description='Common Utilities for Serverless Development',
       long_description=LONG_DESCRIPTION,
@@ -24,8 +24,8 @@ setup(name='exos-serverless-lib',
           'Programming Language :: Python :: 3'
       ],
       keywords='Lambda, Serverless, AWS, Dynamo, Structured Logging',
-      author='Exos Serverless Team',
-      author_email="dev@teamexos.com",
+      author='wavelength Serverless Team',
+      author_email="dev@teamwavelength.com",
       packages=find_packages(exclude=['test*']),
       include_package_data=True,
       package_dir={'.': ''},

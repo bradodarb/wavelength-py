@@ -1,7 +1,7 @@
 """
 Default config for DAL
 """
-from exos_serverless_lib.dal.dynamodb.util import BotoThrottleConfig
+from wavelength_serverless_lib.dal.dynamodb.util import BotoThrottleConfig
 
 
 class DalConfig(BotoThrottleConfig):

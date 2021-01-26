@@ -8,12 +8,12 @@
 # from pynamodb.expressions.condition import And, Or
 # from pynamodb.expressions.operand import Path
 #
-# from exos_serverless_lib.config import CONFIG
-# from exos_serverless_lib.dal.dao.commands.post_filter_pynamo_command import PostFilteredPynamoCommand
-# from exos_serverless_lib.dal.dao.models.platform_persistence_model import PynamoPersistenceModel
-# from exos_serverless_lib.dal.pynamo_models.util import pynamo_write_handler
-# from exos_serverless_lib.errors.exceptions import Base404Exception, Base409Exception
-# from exos_serverless_lib.model.util import get_posix_timestamp
+# from wavelength_serverless_lib.config import CONFIG
+# from wavelength_serverless_lib.dal.dao.commands.post_filter_pynamo_command import PostFilteredPynamoCommand
+# from wavelength_serverless_lib.dal.dao.models.platform_persistence_model import PynamoPersistenceModel
+# from wavelength_serverless_lib.dal.pynamo_models.util import pynamo_write_handler
+# from wavelength_serverless_lib.errors.exceptions import Base404Exception, Base409Exception
+# from wavelength_serverless_lib.model.util import get_posix_timestamp
 #
 #
 # class AcquireLockFailureException(Base409Exception):

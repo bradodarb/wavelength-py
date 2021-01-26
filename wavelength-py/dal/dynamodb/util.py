@@ -8,9 +8,9 @@ import json
 from botocore.exceptions import ClientError
 from retrying import retry
 
-from exos_serverless_lib.aws.boto_helper import is_a_boto3_throttle_error
-from exos_serverless_lib.errors.exceptions import Base409Exception, Base422Exception, Base429Exception
-from exos_serverless_lib.logging.slog import StructLog as log
+from wavelength_serverless_lib.aws.boto_helper import is_a_boto3_throttle_error
+from wavelength_serverless_lib.errors.exceptions import Base409Exception, Base422Exception, Base429Exception
+from wavelength_serverless_lib.logging.slog import StructLog as log
 
 
 class BotoThrottleConfig:

@@ -6,12 +6,12 @@ from typing import Type
 
 from pynamodb.models import Model as PynamoModel
 
-from exos_serverless_lib.dal.dao.commands.create_pynamo_command import PynamoCreateCommand
-from exos_serverless_lib.dal.dao.commands.get_by_key_pynamo_command import PynamoGetByIdCommand
-from exos_serverless_lib.dal.dao.commands.query_pynamo_command import PynamoQueryCommand
-from exos_serverless_lib.dal.dao.commands.soft_delete_pynamo_command import PynamoSoftDeleteCommand
-from exos_serverless_lib.dal.dao.commands.update_pynamo_command import PynamoUpdateCommand
-from exos_serverless_lib.dal.dao.models.platform_persistence_model import PynamoPersistenceModel
+from wavelength_serverless_lib.dal.dao.commands.create_pynamo_command import PynamoCreateCommand
+from wavelength_serverless_lib.dal.dao.commands.get_by_key_pynamo_command import PynamoGetByIdCommand
+from wavelength_serverless_lib.dal.dao.commands.query_pynamo_command import PynamoQueryCommand
+from wavelength_serverless_lib.dal.dao.commands.soft_delete_pynamo_command import PynamoSoftDeleteCommand
+from wavelength_serverless_lib.dal.dao.commands.update_pynamo_command import PynamoUpdateCommand
+from wavelength_serverless_lib.dal.dao.models.platform_persistence_model import PynamoPersistenceModel
 
 
 class PynamoCrudModel(PynamoPersistenceModel):

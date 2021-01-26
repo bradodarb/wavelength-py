@@ -1,6 +1,6 @@
 import unittest
 
-from exos_serverless_lib.logging.util.cast_checks import is_int_like, is_json_serializable
+from wavelength_serverless_lib.logging.util.cast_checks import is_int_like, is_json_serializable
 
 
 class TestCastings(unittest.TestCase):

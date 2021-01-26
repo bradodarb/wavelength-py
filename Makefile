@@ -2,9 +2,9 @@ SHELL:=/bin/bash
 
 include .env
 
-KEY = $(shell aws --profile exos configure get aws_access_key_id)
-SECRET = $(shell aws --profile exos configure get aws_secret_access_key)
-REGION = $(shell aws --profile exos configure get region)
+KEY = $(shell aws --profile wavelength configure get aws_access_key_id)
+SECRET = $(shell aws --profile wavelength configure get aws_secret_access_key)
+REGION = $(shell aws --profile wavelength configure get region)
 
 .PHONY: clean creds
 clean creds:

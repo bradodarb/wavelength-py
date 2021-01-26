@@ -4,11 +4,11 @@ import os
 import unittest
 from unittest.mock import MagicMock
 
-from exos_serverless_lib.aws.aws_args import (get_authorization_header, get_headers, get_profiles, get_stage, get_claims,
+from wavelength_serverless_lib.aws.aws_args import (get_authorization_header, get_headers, get_profiles, get_stage, get_claims,
                                               get_account_id,
                                               get_profile_id, HEADER_PROFILE_INDEX_KEY, get_entitlements, convert_body,
                                               convert_response, get_standard_response)
-from exos_serverless_lib.errors.exceptions import Base422Exception
+from wavelength_serverless_lib.errors.exceptions import Base422Exception
 
 logging.basicConfig()
 log = logging.getLogger('logger')

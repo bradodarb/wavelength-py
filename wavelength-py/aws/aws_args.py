@@ -6,8 +6,8 @@ import os
 
 from schleppy import reach
 
-from exos_serverless_lib.errors.exceptions import Base422Exception
-from exos_serverless_lib.util import standard_response
+from wavelength_serverless_lib.errors.exceptions import Base422Exception
+from wavelength_serverless_lib.util import standard_response
 
 HEADER_PROFILE_INDEX_KEY = 'PROFILE_IDX'
 EIDS_CUSTOM_CLAIM = "custom:eids"

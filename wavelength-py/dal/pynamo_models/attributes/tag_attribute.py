@@ -5,7 +5,7 @@ from functools import singledispatch
 
 from pynamodb.attributes import UnicodeAttribute
 
-from exos_serverless_lib.model.util import safe_split
+from wavelength_serverless_lib.model.util import safe_split
 
 
 @singledispatch

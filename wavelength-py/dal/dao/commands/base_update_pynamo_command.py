@@ -5,11 +5,11 @@ from typing import Any
 
 from pynamodb.models import Model as PynamoModel
 
-from exos_serverless_lib.dal.dal_config import DalConfig
-from exos_serverless_lib.dal.dao.commands.post_filter_pynamo_command import PostFilteredPynamoCommand
-from exos_serverless_lib.dal.pynamo_models.util import pynamo_write_handler
-from exos_serverless_lib.errors.exceptions import Base404Exception
-from exos_serverless_lib.model.util import get_posix_timestamp
+from wavelength_serverless_lib.dal.dal_config import DalConfig
+from wavelength_serverless_lib.dal.dao.commands.post_filter_pynamo_command import PostFilteredPynamoCommand
+from wavelength_serverless_lib.dal.pynamo_models.util import pynamo_write_handler
+from wavelength_serverless_lib.errors.exceptions import Base404Exception
+from wavelength_serverless_lib.model.util import get_posix_timestamp
 
 
 class BaseUpdatePynamoCommand(PostFilteredPynamoCommand):

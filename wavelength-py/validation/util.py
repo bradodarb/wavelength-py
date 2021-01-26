@@ -6,7 +6,7 @@ from functools import wraps
 import simplejson
 from bravado_core.exception import SwaggerMappingError
 
-from exos_serverless_lib.errors.exceptions import Base422Exception
+from wavelength_serverless_lib.errors.exceptions import Base422Exception
 
 
 def validate_event(model, validation_exceptions=(SwaggerMappingError, Exception)):

@@ -8,7 +8,7 @@ import simplejson
 from schematics import Model
 from schematics.exceptions import DataError
 
-from exos_serverless_lib.errors.exceptions import Base422Exception
+from wavelength_serverless_lib.errors.exceptions import Base422Exception
 
 
 class BaseModel(Model):

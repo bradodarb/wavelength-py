@@ -2,9 +2,9 @@
 Module to support updating a single record
 """
 
-from exos_serverless_lib.dal.dao.commands.base_update_pynamo_command import BaseUpdatePynamoCommand
-from exos_serverless_lib.dal.dao.commands.post_filter_pynamo_command import filter_deleted_items
-from exos_serverless_lib.dal.dao.models.platform_persistence_model import PynamoPersistenceModel
+from wavelength_serverless_lib.dal.dao.commands.base_update_pynamo_command import BaseUpdatePynamoCommand
+from wavelength_serverless_lib.dal.dao.commands.post_filter_pynamo_command import filter_deleted_items
+from wavelength_serverless_lib.dal.dao.models.platform_persistence_model import PynamoPersistenceModel
 
 
 class PynamoUpdateCommand(BaseUpdatePynamoCommand):

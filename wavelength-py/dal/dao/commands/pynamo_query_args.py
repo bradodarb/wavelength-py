@@ -3,9 +3,9 @@ Query args for gathering a single record and filtering it on the client side
 """
 from typing import List, Any, Callable
 
-from exos_serverless_lib.dal.dao.commands.post_filter_pynamo_command import filter_deleted_items
-from exos_serverless_lib.dal.dao.commands.pynamo_command import FilterModel
-from exos_serverless_lib.dal.dynamodb.util import decode_start_token
+from wavelength_serverless_lib.dal.dao.commands.post_filter_pynamo_command import filter_deleted_items
+from wavelength_serverless_lib.dal.dao.commands.pynamo_command import FilterModel
+from wavelength_serverless_lib.dal.dynamodb.util import decode_start_token
 
 
 class PynamoQueryArguments:

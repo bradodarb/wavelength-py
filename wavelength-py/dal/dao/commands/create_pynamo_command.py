@@ -1,10 +1,10 @@
 """
 Module for supporting a hard delete on a pynamo item
 """
-from exos_serverless_lib.dal.dao.commands.pynamo_command import BasePynamoCommand
-from exos_serverless_lib.dal.pynamo_models.util import pynamo_write_handler
-from exos_serverless_lib.errors.exceptions import Base422Exception
-from exos_serverless_lib.model.util import get_posix_timestamp
+from wavelength_serverless_lib.dal.dao.commands.pynamo_command import BasePynamoCommand
+from wavelength_serverless_lib.dal.pynamo_models.util import pynamo_write_handler
+from wavelength_serverless_lib.errors.exceptions import Base422Exception
+from wavelength_serverless_lib.model.util import get_posix_timestamp
 
 
 class PynamoCreateCommand(BasePynamoCommand):

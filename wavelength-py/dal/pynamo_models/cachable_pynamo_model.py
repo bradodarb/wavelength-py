@@ -4,8 +4,8 @@ Base mode for cache enabled pynamo model access
 from cachetools import TTLCache
 from pynamodb.models import Model as PynamoModel
 
-from exos_serverless_lib.config import CONFIG
-from exos_serverless_lib.dal.pynamo_models.util import QueryResult
+from wavelength_serverless_lib.config import CONFIG
+from wavelength_serverless_lib.dal.pynamo_models.util import QueryResult
 
 
 class CachingPynamoModel(PynamoModel):

@@ -8,8 +8,8 @@ from jsonschema import ValidationError
 from schleppy import reach
 from yaml import load, Loader
 
-from exos_serverless_lib.errors.exceptions import Base422Exception
-from exos_serverless_lib.validation.util import RequestValidationModel
+from wavelength_serverless_lib.errors.exceptions import Base422Exception
+from wavelength_serverless_lib.validation.util import RequestValidationModel
 
 
 class Validator:

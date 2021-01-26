@@ -9,9 +9,9 @@ from pynamodb.expressions.condition import Comparison
 from pynamodb.expressions.operand import Path as PynamoAction
 from schematics.types import StringType, ListType, BaseType
 
-from exos_serverless_lib.dal.dao.models.platform_persistence_model import PynamoPersistenceModel
-from exos_serverless_lib.errors.exceptions import Base422Exception
-from exos_serverless_lib.model.model_base import BaseModel
+from wavelength_serverless_lib.dal.dao.models.platform_persistence_model import PynamoPersistenceModel
+from wavelength_serverless_lib.errors.exceptions import Base422Exception
+from wavelength_serverless_lib.model.model_base import BaseModel
 
 OPERATOR_LOOKUP = {
     'eq': '__eq__',

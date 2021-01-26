@@ -5,7 +5,7 @@ from abc import abstractmethod
 from enum import Enum
 from http import HTTPStatus
 
-from exos_serverless_lib.util.standard_response import get_standard_response
+from wavelength_serverless_lib.util.standard_response import get_standard_response
 
 
 class ExceptionLogLevel(Enum):
@@ -23,7 +23,7 @@ class ExceptionLogLevel(Enum):
 BASE_EXCEPTION_EVENT_TYPE = 'EXCEPTION'
 
 
-class EXOSBaseException(Exception):
+class wavelengthBaseException(Exception):
     """
     Base exception for serverless. Other exceptions inherit from this class in
     order to provide a standard error message response format. Subclasses
@@ -31,7 +31,7 @@ class EXOSBaseException(Exception):
     """
 
     def __init__(self, error="Not Available", reason="Not Available", code="0"):
-        super(EXOSBaseException, self).__init__(error)
+        super(wavelengthBaseException, self).__init__(error)
         self.reason = reason
         self.code = code
         self.exception_log_level = ExceptionLogLevel.EXCEPTION
@@ -65,7 +65,7 @@ class EXOSBaseException(Exception):
         raise NotImplementedError()
 
 
-class Base401Exception(EXOSBaseException):
+class Base401Exception(wavelengthBaseException):
     """
     401 Unauthorized.
     """
@@ -74,7 +74,7 @@ class Base401Exception(EXOSBaseException):
         return self._get_response(HTTPStatus.UNAUTHORIZED, context)
 
 
-class Base404Exception(EXOSBaseException):
+class Base404Exception(wavelengthBaseException):
     """
     404 Not found (API route).
     """
@@ -91,7 +91,7 @@ class Base404Exception(EXOSBaseException):
         return self._get_response(HTTPStatus.NOT_FOUND, context)
 
 
-class Base403Exception(EXOSBaseException):
+class Base403Exception(wavelengthBaseException):
     """
     403 Forbidden.
     """
@@ -100,7 +100,7 @@ class Base403Exception(EXOSBaseException):
         return self._get_response(HTTPStatus.FORBIDDEN, context)
 
 
-class Base409Exception(EXOSBaseException):
+class Base409Exception(wavelengthBaseException):
     """
     409 Conflict.
     """
@@ -109,7 +109,7 @@ class Base409Exception(EXOSBaseException):
         return self._get_response(HTTPStatus.CONFLICT, context)
 
 
-class Base412Exception(EXOSBaseException):
+class Base412Exception(wavelengthBaseException):
     """
     412 Precondition Failed exception.
     """
@@ -118,7 +118,7 @@ class Base412Exception(EXOSBaseException):
         return self._get_response(HTTPStatus.PRECONDITION_FAILED, context)
 
 
-class Base415Exception(EXOSBaseException):
+class Base415Exception(wavelengthBaseException):
     """
     415 Invalid Media Type exception.
     """
@@ -127,7 +127,7 @@ class Base415Exception(EXOSBaseException):
         return self._get_response(HTTPStatus.UNSUPPORTED_MEDIA_TYPE, context)
 
 
-class Base422Exception(EXOSBaseException):
+class Base422Exception(wavelengthBaseException):
     """
     422 Input validation error.
     """
@@ -136,7 +136,7 @@ class Base422Exception(EXOSBaseException):
         return self._get_response(HTTPStatus.UNPROCESSABLE_ENTITY, context)
 
 
-class Base429Exception(EXOSBaseException):
+class Base429Exception(wavelengthBaseException):
     """
     429 Too many request exception.
     """
@@ -145,7 +145,7 @@ class Base429Exception(EXOSBaseException):
         return self._get_response(HTTPStatus.TOO_MANY_REQUESTS, context)
 
 
-class Base5xxException(EXOSBaseException):
+class Base5xxException(wavelengthBaseException):
     """
     5xx Server Errors.
     """

@@ -8,7 +8,7 @@ import arrow
 
 from pynamodb.attributes import NumberAttribute
 
-from exos_serverless_lib.model.util import get_posix_timestamp
+from wavelength_serverless_lib.model.util import get_posix_timestamp
 
 
 @singledispatch

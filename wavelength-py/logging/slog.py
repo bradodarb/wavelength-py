@@ -3,13 +3,13 @@ Lambda log wrapper
 """
 import functools
 
-from exos_serverless_lib.aws.aws_args import convert_response, convert_body
-from exos_serverless_lib.errors.exceptions import (Base5xxException,
-                                                   EXOSBaseException)
-from exos_serverless_lib.logging.log_lambda_base import LogLambdaBase
-from exos_serverless_lib.logging.log_lambda_metrics import LogLambdaMetrics
-from exos_serverless_lib.logging.logging_util import FluentLogger
-from exos_serverless_lib.logging.util.cast_checks import is_json_serializable
+from wavelength_serverless_lib.aws.aws_args import convert_response, convert_body
+from wavelength_serverless_lib.errors.exceptions import (Base5xxException,
+                                                   wavelengthBaseException)
+from wavelength_serverless_lib.logging.log_lambda_base import LogLambdaBase
+from wavelength_serverless_lib.logging.log_lambda_metrics import LogLambdaMetrics
+from wavelength_serverless_lib.logging.logging_util import FluentLogger
+from wavelength_serverless_lib.logging.util.cast_checks import is_json_serializable
 
 
 class LogLambda(LogLambdaBase):
@@ -81,8 +81,8 @@ class LogLambda(LogLambdaBase):
                 self.exception(error)
                 ret = error.get_response(context)
                 raise error
-            except EXOSBaseException as error:
-                self.log_exos_exception(error)
+            except wavelengthBaseException as error:
+                self.log_wavelength_exception(error)
                 ret = error.get_response(context)
             except Exception as error:
                 self.exception(error)
@@ -156,7 +156,7 @@ class StructLog:
         log exception to structure logger
         """
         if 'reason' not in kwargs:
-            if isinstance(error, EXOSBaseException):
+            if isinstance(error, wavelengthBaseException):
                 reason = error.reason
             else:
                 reason = 'unknown'

@@ -9,9 +9,9 @@ from pynamodb.models import Model as PynamoModel
 from pynamodb.pagination import ResultIterator
 from retrying import retry
 
-from exos_serverless_lib.config import CONFIG
-from exos_serverless_lib.dal.dynamodb.util import encode_start_token, handle_dynamodb_client_error
-from exos_serverless_lib.errors.exceptions import Base429Exception, Base5xxException
+from wavelength_serverless_lib.config import CONFIG
+from wavelength_serverless_lib.dal.dynamodb.util import encode_start_token, handle_dynamodb_client_error
+from wavelength_serverless_lib.errors.exceptions import Base429Exception, Base5xxException
 
 PLATFORM_DB_PROPS = [
     'hash_id',

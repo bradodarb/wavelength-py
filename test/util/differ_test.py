@@ -1,6 +1,6 @@
 
 import unittest
-from exos_serverless_lib.util.dict_differ import DictDiffer
+from wavelength_serverless_lib.util.dict_differ import DictDiffer
 
 
 class TestDiffer(unittest.TestCase):

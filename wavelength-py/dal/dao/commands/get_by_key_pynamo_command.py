@@ -3,8 +3,8 @@ Module to support loading a single record by key
 """
 from typing import Any
 
-from exos_serverless_lib.dal.dao.commands.post_filter_pynamo_command import filter_deleted_items, PostFilteredPynamoCommand
-from exos_serverless_lib.dal.dao.models.platform_persistence_model import PynamoPersistenceModel
+from wavelength_serverless_lib.dal.dao.commands.post_filter_pynamo_command import filter_deleted_items, PostFilteredPynamoCommand
+from wavelength_serverless_lib.dal.dao.models.platform_persistence_model import PynamoPersistenceModel
 
 
 class PynamoGetByIdCommand(PostFilteredPynamoCommand):
