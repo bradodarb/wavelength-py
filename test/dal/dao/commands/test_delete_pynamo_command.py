@@ -3,7 +3,7 @@ import unittest
 
 from mock import MagicMock
 
-from exos_serverless_lib.dal.dao.commands.delete_pynamo_command import PynamoDeleteCommand
+from wavelength_serverless_lib.dal.dao.commands.delete_pynamo_command import PynamoDeleteCommand
 from test.dal.dao.commands.test_pynamo_command import get_persitence_model_mock
 
 logging.basicConfig()

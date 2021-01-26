@@ -5,9 +5,9 @@ from botocore.exceptions import ClientError
 from mock import MagicMock
 from pynamodb.exceptions import DoesNotExist, PynamoDBConnectionError
 
-from exos_serverless_lib.dal.dal_config import DalConfig
-from exos_serverless_lib.dal.dao.commands.post_filter_pynamo_command import PostFilteredPynamoCommand, filter_deleted_items
-from exos_serverless_lib.errors.exceptions import Base422Exception, Base404Exception, Base409Exception, Base5xxException
+from wavelength_serverless_lib.dal.dal_config import DalConfig
+from wavelength_serverless_lib.dal.dao.commands.post_filter_pynamo_command import PostFilteredPynamoCommand, filter_deleted_items
+from wavelength_serverless_lib.errors.exceptions import Base422Exception, Base404Exception, Base409Exception, Base5xxException
 from test.dal.dao.commands.test_pynamo_command import get_persitence_model_mock, always_filter_out
 
 logging.basicConfig()

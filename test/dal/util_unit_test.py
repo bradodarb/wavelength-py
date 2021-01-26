@@ -2,7 +2,7 @@ import logging
 import unittest
 from datetime import datetime
 
-from exos_serverless_lib.model.util import get_posix_timestamp, get_posix_date, get_range_key
+from wavelength_serverless_lib.model.util import get_posix_timestamp, get_posix_date, get_range_key
 
 logging.basicConfig()
 log = logging.getLogger('logger')

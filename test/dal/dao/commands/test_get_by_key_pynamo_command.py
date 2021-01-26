@@ -3,8 +3,8 @@ import unittest
 
 from mock import MagicMock
 
-from exos_serverless_lib.dal.dal_config import DalConfig
-from exos_serverless_lib.dal.dao.commands.get_by_key_pynamo_command import PynamoGetByIdCommand
+from wavelength_serverless_lib.dal.dal_config import DalConfig
+from wavelength_serverless_lib.dal.dao.commands.get_by_key_pynamo_command import PynamoGetByIdCommand
 from test.dal.dao.commands.test_pynamo_command import get_persitence_model_mock
 
 logging.basicConfig()

@@ -3,10 +3,10 @@ import unittest
 
 from mock import MagicMock, PropertyMock, patch
 
-from exos_serverless_lib.dal.dal_config import DalConfig
-from exos_serverless_lib.dal.dao.commands.pynamo_command import BasePynamoCommand, FilterModel
-from exos_serverless_lib.dal.pynamo_models.cachable_pynamo_model import CachingPynamoModel
-from exos_serverless_lib.errors.exceptions import Base422Exception
+from wavelength_serverless_lib.dal.dal_config import DalConfig
+from wavelength_serverless_lib.dal.dao.commands.pynamo_command import BasePynamoCommand, FilterModel
+from wavelength_serverless_lib.dal.pynamo_models.cachable_pynamo_model import CachingPynamoModel
+from wavelength_serverless_lib.errors.exceptions import Base422Exception
 
 logging.basicConfig()
 log = logging.getLogger('logger')
@@ -107,7 +107,7 @@ class TestPynamoCommand(unittest.TestCase):
         mock_parent.db_model.kind.other_operator.assert_called_once()
         mock_parent.db_model.kind.other_operator.assert_called_with('my_param')
 
-    @patch('exos_serverless_lib.dal.pynamo_models.cachable_pynamo_model.PynamoModel.__init__', MagicMock(return_value=None))
+    @patch('wavelength_serverless_lib.dal.pynamo_models.cachable_pynamo_model.PynamoModel.__init__', MagicMock(return_value=None))
     def test_builds_conditional_prop_exeption(self):
         model = MagicMock()
         model.db_model = CachingPynamoModel({})
@@ -119,7 +119,7 @@ class TestPynamoCommand(unittest.TestCase):
             conditions = command._build_conditionals(filters)
         self.assertEqual(str(err.exception), 'Model has no property named "kind"')
 
-    @patch('exos_serverless_lib.dal.pynamo_models.cachable_pynamo_model.PynamoModel.__init__', MagicMock(return_value=None))
+    @patch('wavelength_serverless_lib.dal.pynamo_models.cachable_pynamo_model.PynamoModel.__init__', MagicMock(return_value=None))
     def test_builds_conditional_operator_exeption(self):
         model = MagicMock()
         model.db_model = CachingPynamoModel({})
