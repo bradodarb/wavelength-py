@@ -8,10 +8,10 @@ import pytest
 from mock import MagicMock, patch
 from mock.mock import call
 
-import wavelength_serverless_lib.logging.log_lambda_base as slog_base
-import wavelength_serverless_lib.logging.slog as slog
-from wavelength_serverless_lib.errors.exceptions import wavelengthBaseException, Base422Exception, Base5xxException, ExceptionLogLevel
-from wavelength_serverless_lib.logging.logging_util import (MAX_LOG_APPEND, fit_log_msg, BufferStreamHandler)
+import wavelength_py.logging.log_lambda_base as slog_base
+import wavelength_py.logging.slog as slog
+from wavelength_py.errors.exceptions import wavelengthBaseException, Base422Exception, Base5xxException, ExceptionLogLevel
+from wavelength_py.logging.logging_util import (MAX_LOG_APPEND, fit_log_msg, BufferStreamHandler)
 
 logging.basicConfig()
 log = logging.getLogger('logger')
@@ -217,7 +217,7 @@ class TestSlog(unittest.TestCase):
 
         self.assertEqual(body['message'], message)
 
-    @patch("wavelength_serverless_lib.logging.log_lambda_base.LogLambdaBase.error")
+    @patch("wavelength_py.logging.log_lambda_base.LogLambdaBase.error")
     def test_log_lambda_logs_bod_exception(self, mock_error):
         self._execute_log_lamda_fucntion_which_raises()
 
@@ -228,7 +228,7 @@ class TestSlog(unittest.TestCase):
             exception_type='Base422Exception',
             fluent_logger=None)
 
-    @patch("wavelength_serverless_lib.logging.log_lambda_base.LogLambdaBase.error")
+    @patch("wavelength_py.logging.log_lambda_base.LogLambdaBase.error")
     def test_log_lambda_logs_bod_exception_invalid_type(self, mock_error):
         self._execute_log_lamda_fucntion_which_raises("Bad_VALUE")
 
@@ -239,7 +239,7 @@ class TestSlog(unittest.TestCase):
             exception_type='Base422Exception',
             fluent_logger=None)
 
-    @patch("wavelength_serverless_lib.logging.log_lambda_base.LogLambdaBase.error")
+    @patch("wavelength_py.logging.log_lambda_base.LogLambdaBase.error")
     def test_log_lambda_logs_bod_exception_error_level(self, mock_error):
         self._execute_log_lamda_fucntion_which_raises(ExceptionLogLevel.ERROR)
 
@@ -250,7 +250,7 @@ class TestSlog(unittest.TestCase):
             exception_type='Base422Exception',
             fluent_logger=None)
 
-    @patch("wavelength_serverless_lib.logging.log_lambda_base.LogLambdaBase.critical")
+    @patch("wavelength_py.logging.log_lambda_base.LogLambdaBase.critical")
     def test_log_lambda_logs_bod_exception_critical_level(self, mock_critical):
         self._execute_log_lamda_fucntion_which_raises(ExceptionLogLevel.CRITICAL)
 
@@ -261,7 +261,7 @@ class TestSlog(unittest.TestCase):
             exception_type='Base422Exception',
             fluent_logger=None)
 
-    @patch("wavelength_serverless_lib.logging.log_lambda_base.LogLambdaBase.warn")
+    @patch("wavelength_py.logging.log_lambda_base.LogLambdaBase.warn")
     def test_log_lambda_logs_bod_exception_warn_level(self, mock_warn):
         self._execute_log_lamda_fucntion_which_raises(ExceptionLogLevel.WARNING)
 
@@ -272,7 +272,7 @@ class TestSlog(unittest.TestCase):
             exception_type='Base422Exception',
             fluent_logger=None)
 
-    @patch("wavelength_serverless_lib.logging.log_lambda_base.LogLambdaBase.info")
+    @patch("wavelength_py.logging.log_lambda_base.LogLambdaBase.info")
     def test_log_lambda_logs_bod_exception_info_level(self, mock_info):
         self._execute_log_lamda_fucntion_which_raises(ExceptionLogLevel.INFO)
 
@@ -286,7 +286,7 @@ class TestSlog(unittest.TestCase):
                     fluent_logger=None)
             ])
 
-    @patch("wavelength_serverless_lib.logging.log_lambda_base.LogLambdaBase.debug")
+    @patch("wavelength_py.logging.log_lambda_base.LogLambdaBase.debug")
     def test_log_lambda_logs_bod_exception_debug_level(self, mock_debug):
         self._execute_log_lamda_fucntion_which_raises(ExceptionLogLevel.DEBUG)
 
@@ -297,7 +297,7 @@ class TestSlog(unittest.TestCase):
             exception_type='Base422Exception',
             fluent_logger=None)
 
-    @patch("wavelength_serverless_lib.logging.log_lambda_base.LogLambdaBase.debug")
+    @patch("wavelength_py.logging.log_lambda_base.LogLambdaBase.debug")
     def test_log_lambda_logs_bod_exception_with_configured_event_name(self, mock_debug):
         self._execute_log_lamda_fucntion_which_raises(ExceptionLogLevel.DEBUG, event_type="TEST_EVENT_NAME")
 

@@ -1,7 +1,7 @@
 import logging
 import unittest
 
-from wavelength_serverless_lib.dal.pynamo_models.attributes.tag_attribute import (serialize_tag_str, serialize_tag_list, TagAttribute,
+from wavelength_py.dal.pynamo_models.attributes.tag_attribute import (serialize_tag_str, serialize_tag_list, TagAttribute,
                                                                             serialize_tag)
 
 logging.basicConfig()

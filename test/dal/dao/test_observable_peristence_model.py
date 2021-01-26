@@ -5,7 +5,7 @@ import unittest
 
 from schematics.types import StringType
 
-from wavelength_serverless_lib.dal.dao.models.observable_persistence_model import ObservablePersistenceModel
+from wavelength_py.dal.dao.models.observable_persistence_model import ObservablePersistenceModel
 
 logging.basicConfig()
 log = logging.getLogger('logger')

@@ -5,8 +5,8 @@ from botocore.exceptions import ClientError
 from mock import MagicMock
 from pynamodb.exceptions import PynamoDBConnectionError
 
-from wavelength_serverless_lib.dal.dao.commands.create_pynamo_command import PynamoCreateCommand
-from wavelength_serverless_lib.errors.exceptions import Base5xxException, Base409Exception, Base422Exception
+from wavelength_py.dal.dao.commands.create_pynamo_command import PynamoCreateCommand
+from wavelength_py.errors.exceptions import Base5xxException, Base409Exception, Base422Exception
 from test.dal.dao.commands.test_pynamo_command import get_persitence_model_mock
 
 logging.basicConfig()

@@ -3,10 +3,10 @@ import unittest
 
 from mock import MagicMock, ANY
 
-from wavelength_serverless_lib.dal.dal_config import DalConfig
-from wavelength_serverless_lib.dal.dao.commands.pynamo_command import always_pass
-from wavelength_serverless_lib.dal.dao.commands.pynamo_query_args import PynamoQueryArguments
-from wavelength_serverless_lib.dal.dao.commands.query_pynamo_command import PynamoQueryCommand, PynamoQueryResult
+from wavelength_py.dal.dal_config import DalConfig
+from wavelength_py.dal.dao.commands.pynamo_command import always_pass
+from wavelength_py.dal.dao.commands.pynamo_query_args import PynamoQueryArguments
+from wavelength_py.dal.dao.commands.query_pynamo_command import PynamoQueryCommand, PynamoQueryResult
 from test.dal.dao.commands.test_pynamo_command import get_persitence_model_mock
 
 logging.basicConfig()

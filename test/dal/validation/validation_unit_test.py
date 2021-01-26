@@ -4,8 +4,8 @@ import logging
 import os
 import unittest
 
-from wavelength_serverless_lib.errors.exceptions import Base422Exception
-from wavelength_serverless_lib.validation.validation import Validator
+from wavelength_py.errors.exceptions import Base422Exception
+from wavelength_py.validation.validation import Validator
 
 logging.basicConfig()
 log = logging.getLogger('logger')

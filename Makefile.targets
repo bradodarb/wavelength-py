@@ -19,15 +19,15 @@ lint:
 
 .PHONY: unit-test
 unit-test:
-	py.test -s --color=yes --cov-report html --cov-report term --cov=wavelength_serverless_lib test/unit --cov-fail-under=80
+	py.test -s --color=yes --cov-report html --cov-report term --cov=wavelength_py test/unit --cov-fail-under=80
 
 .PHONY: integration-test
 integration-test:
-	py.test -s --color=yes --cov-report html --cov-report term --cov=wavelength_serverless_lib test/integration --cov-fail-under=80
+	py.test -s --color=yes --cov-report html --cov-report term --cov=wavelength_py test/integration --cov-fail-under=80
 
 .PHONY: test
 test:
-	py.test -s --color=yes --cov-report html --cov-report term --cov=wavelength_serverless_lib test --cov-fail-under=80
+	py.test -s --color=yes --cov-report html --cov-report term --cov=wavelength_py test --cov-fail-under=80
 .PHONY: coverage
 coverage: test
 	google-chrome htmlcov/index.html

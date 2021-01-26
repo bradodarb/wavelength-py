@@ -6,12 +6,12 @@ import string
 import unittest
 from time import sleep
 
-from wavelength_serverless_lib.dal.dal_config import DalConfig
+from wavelength_py.dal.dal_config import DalConfig
 from cachetools import TTLCache
 from mock import patch, MagicMock
 
-from wavelength_serverless_lib.dal.pynamo_models.cachable_pynamo_model import CachingPynamoModel
-from wavelength_serverless_lib.dal.pynamo_models.util import QueryResult
+from wavelength_py.dal.pynamo_models.cachable_pynamo_model import CachingPynamoModel
+from wavelength_py.dal.pynamo_models.util import QueryResult
 
 logging.basicConfig()
 log = logging.getLogger('logger')
@@ -66,12 +66,12 @@ get_mock_result = item_mock({
 get_mock = MagicMock(return_value=get_mock_result)
 
 
-@patch('wavelength_serverless_lib.dal.pynamo_models.cachable_pynamo_model.PynamoModel.__init__', MagicMock(return_value=None))
-@patch('wavelength_serverless_lib.dal.pynamo_models.cachable_pynamo_model.PynamoModel.query', query_mock())
-@patch('wavelength_serverless_lib.dal.pynamo_models.cachable_pynamo_model.PynamoModel.get', get_mock)
-@patch('wavelength_serverless_lib.dal.pynamo_models.cachable_pynamo_model.PynamoModel.save', MagicMock(return_value=None))
-@patch('wavelength_serverless_lib.dal.pynamo_models.cachable_pynamo_model.PynamoModel.update', MagicMock(return_value=None))
-@patch('wavelength_serverless_lib.dal.pynamo_models.cachable_pynamo_model.PynamoModel.delete', MagicMock(return_value=None))
+@patch('wavelength_py.dal.pynamo_models.cachable_pynamo_model.PynamoModel.__init__', MagicMock(return_value=None))
+@patch('wavelength_py.dal.pynamo_models.cachable_pynamo_model.PynamoModel.query', query_mock())
+@patch('wavelength_py.dal.pynamo_models.cachable_pynamo_model.PynamoModel.get', get_mock)
+@patch('wavelength_py.dal.pynamo_models.cachable_pynamo_model.PynamoModel.save', MagicMock(return_value=None))
+@patch('wavelength_py.dal.pynamo_models.cachable_pynamo_model.PynamoModel.update', MagicMock(return_value=None))
+@patch('wavelength_py.dal.pynamo_models.cachable_pynamo_model.PynamoModel.delete', MagicMock(return_value=None))
 class TestPynamoCacheModel(unittest.TestCase):
 
     def test_init(self):

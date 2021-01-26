@@ -2,7 +2,7 @@ import logging
 import unittest
 from decimal import Decimal
 
-from wavelength_serverless_lib.dal.pynamo_models.attributes.epoch_attribute import serialize_epoch_str, serialize_epoch, EpochAttribute, \
+from wavelength_py.dal.pynamo_models.attributes.epoch_attribute import serialize_epoch_str, serialize_epoch, EpochAttribute, \
     serialize_epoch_numeric, serialize_epoch_int
 
 logging.basicConfig()

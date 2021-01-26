@@ -3,7 +3,7 @@ import unittest
 
 import simplejson as json
 
-from wavelength_serverless_lib.dal.pynamo_models.attributes.compressed_json_attribute import CompressedJSONAttribute, COMPRESSED_KEY
+from wavelength_py.dal.pynamo_models.attributes.compressed_json_attribute import CompressedJSONAttribute, COMPRESSED_KEY
 
 logging.basicConfig()
 log = logging.getLogger('logger')

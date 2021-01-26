@@ -13,7 +13,7 @@ with open(path.join(HERE, 'README.rst')) as f:
 with open(path.join(HERE, 'version.txt')) as f:
     VERSION = f.read()
 
-with open(path.join(HERE, 'wavelength_serverless_lib/requirements.txt')) as f:
+with open(path.join(HERE, 'wavelength_py/requirements.txt')) as f:
     requires = f.read().splitlines()
 
 setup(name='wavelength-serverless-lib',

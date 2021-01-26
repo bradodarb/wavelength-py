@@ -1,6 +1,6 @@
 
 import unittest
-from wavelength_serverless_lib.util.dict_differ import DictDiffer
+from wavelength_py.util.dict_differ import DictDiffer
 
 
 class TestDiffer(unittest.TestCase):

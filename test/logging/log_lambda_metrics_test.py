@@ -1,7 +1,7 @@
 import datetime
 import unittest
 
-from wavelength_serverless_lib.logging.log_lambda_metrics import LogLambdaMetrics
+from wavelength_py.logging.log_lambda_metrics import LogLambdaMetrics
 
 
 class TestLogLambdaMetrics(unittest.TestCase):
